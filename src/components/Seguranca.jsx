@@ -37,7 +37,7 @@ const securityItems = [
   },
   {
     title: 'Controle de Acesso',
-    description: 'Cliente acessa somente o próprio caso. Advogado acessa somente os casos atribuídos. Admin acessa tudo.',
+    description: 'Cliente acessa somente o próprio caso. Advogado acessa os casos atribuídos. Admin acessa tudo.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -50,15 +50,6 @@ const securityItems = [
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Proteção contra Força Bruta',
-    description: 'Bloqueio automático após tentativas repetidas de login incorreto.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
       </svg>
     ),
   },
@@ -81,50 +72,47 @@ const reliabilityItems = [
 
 const languages = [
   { lang: 'Português', desc: 'Clientes brasileiros e equipe interna' },
-  { lang: 'Inglês', desc: 'Clientes de países de língua inglesa e uso internacional' },
-  { lang: 'Espanhol', desc: 'Clientes da América Latina' },
-  { lang: 'Russo', desc: 'Clientes de países de língua russa' },
+  { lang: 'Inglês', desc: 'Clientes internacionais' },
+  { lang: 'Espanhol', desc: 'América Latina' },
+  { lang: 'Russo', desc: 'Países de língua russa' },
 ];
 
 export default function Seguranca() {
   return (
     <section id="seguranca" className="py-28 bg-[#111111]">
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
-        <div className="mb-16 text-center">
+      <div className="site-container">
+        <div className="section-header">
           <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase">Cuidados Críticos</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-5">Segurança e Conformidade</h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             O sistema armazena passaportes, certidões e dados pessoais de estrangeiros. Uma falha tem consequências jurídicas e reputacionais graves.
           </p>
         </div>
 
-        {/* Security grid — 2 cols for legibility */}
+        {/* Security grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {securityItems.map((item) => (
-            <div
-              key={item.title}
-              className="bg-white/[0.03] border border-white/[0.07] rounded-lg p-8 hover:border-[#D96C45]/20 transition-colors"
-            >
-              <div className="w-11 h-11 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] mb-5">
+            <div key={item.title} className="card">
+              <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] mb-5">
                 {item.icon}
               </div>
-              <h3 className="text-white font-semibold text-lg mb-2 leading-snug">{item.title}</h3>
-              <p className="text-gray-400 text-base leading-relaxed">{item.description}</p>
+              <h3 className="text-white font-semibold text-lg mb-3 leading-snug">{item.title}</h3>
+              <p className="text-gray-400 text-[15px] leading-[1.75]">{item.description}</p>
             </div>
           ))}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* LGPD */}
-          <div className="lg:col-span-2 bg-white/[0.03] border border-white/[0.07] rounded-lg p-8">
+          <div className="lg:col-span-2 card">
             <h3 className="text-white font-bold text-xl mb-3">LGPD</h3>
-            <p className="text-gray-400 text-base mb-6 leading-relaxed">
+            <p className="text-gray-400 text-[15px] mb-6 leading-[1.75]">
               A Lei Geral de Proteção de Dados se aplica integralmente ao WK System. Descumprir pode gerar multas de até{' '}
               <span className="text-[#D96C45] font-semibold">2% do faturamento ou R$ 50 milhões</span>.
             </p>
             <ul className="space-y-4">
               {lgpdItems.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-base text-gray-400 leading-relaxed">
+                <li key={item} className="flex items-start gap-4 text-[15px] text-gray-400 leading-[1.75]">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#D96C45]/15 border border-[#D96C45]/30 flex items-center justify-center mt-0.5">
                     <svg className="w-3 h-3 text-[#D96C45]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -137,7 +125,7 @@ export default function Seguranca() {
           </div>
 
           {/* Reliability */}
-          <div className="bg-white/[0.03] border border-white/[0.07] rounded-lg p-8">
+          <div className="card">
             <h3 className="text-white font-bold text-xl mb-6">Confiabilidade</h3>
             <div className="space-y-6">
               {reliabilityItems.map((item) => (
@@ -152,22 +140,22 @@ export default function Seguranca() {
         </div>
 
         {/* Languages */}
-        <div className="bg-white/[0.03] border border-white/[0.07] rounded-lg p-8">
-          <h3 className="text-white font-bold text-xl mb-2">Suporte Multilíngue</h3>
-          <p className="text-gray-400 text-base mb-6 leading-relaxed">
+        <div className="card">
+          <h3 className="text-white font-bold text-xl mb-3">Suporte Multilíngue</h3>
+          <p className="text-gray-400 text-[15px] mb-6 leading-[1.75]">
             O público da WK é estrangeiro. O sistema funciona nos quatro idiomas desde o início, planejado na arquitetura.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {languages.map((l) => (
-              <div key={l.lang} className="flex items-center gap-4 bg-white/[0.03] border border-white/[0.05] rounded-lg p-5">
-                <div className="w-11 h-11 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] flex-shrink-0">
+              <div key={l.lang} className="flex items-center gap-4 bg-white/[0.03] border border-white/[0.05] rounded-lg p-6">
+                <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] flex-shrink-0">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>
                 </div>
                 <div>
                   <div className="text-white font-semibold text-base">{l.lang}</div>
-                  <div className="text-gray-500 text-sm leading-snug mt-0.5">{l.desc}</div>
+                  <div className="text-gray-500 text-sm leading-snug mt-1">{l.desc}</div>
                 </div>
               </div>
             ))}

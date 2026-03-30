@@ -70,11 +70,11 @@ const maintenanceItems = [
 export default function CustosDev() {
   return (
     <section id="investimento" className="py-28 bg-[#0f0f0f]">
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
-        <div className="mb-16 text-center">
+      <div className="site-container">
+        <div className="section-header">
           <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase">Investimento</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-5">Desenvolvimento e Manutenção</h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             O desenvolvimento é dividido em fases para garantir entregas progressivas e valor imediato. A manutenção mantém o sistema seguro e evoluindo.
           </p>
         </div>
@@ -84,10 +84,10 @@ export default function CustosDev() {
           {devPhases.map((p, i) => (
             <div
               key={p.phase}
-              className={`rounded-lg p-8 border ${
+              className={`rounded-lg p-10 border ${
                 i === 0
                   ? 'bg-[#D96C45]/5 border-[#D96C45]/20'
-                  : 'bg-white/[0.03] border-white/[0.07]'
+                  : 'bg-white/[0.025] border-white/[0.06]'
               }`}
             >
               <div className="mb-5">
@@ -103,10 +103,10 @@ export default function CustosDev() {
                 </span>
               </div>
               <h3 className="text-white font-bold text-xl mb-3">{p.title}</h3>
-              <p className="text-gray-400 text-base mb-6 leading-relaxed">{p.description}</p>
+              <p className="text-gray-400 text-[15px] mb-6 leading-[1.75]">{p.description}</p>
               <ul className="space-y-3">
                 {p.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-base text-gray-400 leading-relaxed">
+                  <li key={item} className="flex items-start gap-3 text-[15px] text-gray-400 leading-[1.75]">
                     <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#D96C45]/60 mt-2.5" />
                     {item}
                   </li>
@@ -117,35 +117,32 @@ export default function CustosDev() {
         </div>
 
         {/* Maintenance */}
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold text-white mb-6">O que está incluso na manutenção</h3>
+        <div className="mb-10">
+          <h3 className="text-xl font-semibold text-white mb-6 text-center">O que está incluso na manutenção</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {maintenanceItems.map((item) => (
-              <div
-                key={item.title}
-                className="bg-white/[0.03] border border-white/[0.07] rounded-lg p-8 hover:border-[#D96C45]/20 transition-colors"
-              >
-                <div className="w-11 h-11 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] mb-5">
+              <div key={item.title} className="card">
+                <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] mb-5">
                   {item.icon}
                 </div>
-                <h4 className="text-white font-semibold text-lg mb-2 leading-snug">{item.title}</h4>
-                <p className="text-gray-400 text-base leading-relaxed">{item.description}</p>
+                <h4 className="text-white font-semibold text-lg mb-3 leading-snug">{item.title}</h4>
+                <p className="text-gray-400 text-[15px] leading-[1.75]">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Contact CTA */}
-        <div className="bg-gradient-to-br from-[#D96C45]/8 to-transparent border border-[#D96C45]/20 rounded-lg p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="bg-gradient-to-br from-[#D96C45]/8 to-transparent border border-[#D96C45]/20 rounded-lg p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
             <h3 className="text-white font-bold text-xl mb-2">Pronto para começar?</h3>
-            <p className="text-gray-400 text-base leading-relaxed max-w-lg">
+            <p className="text-gray-400 text-[15px] leading-[1.75] max-w-lg">
               Entre em contato com a Allocate para receber a proposta comercial completa com valores de desenvolvimento e plano de manutenção.
             </p>
           </div>
           <a
             href="mailto:contato@allocate.com.br"
-            className="flex-shrink-0 bg-[#D96C45] hover:bg-[#c45d38] text-white px-10 py-4 rounded-lg text-base font-semibold transition-all duration-200 hover:scale-[1.02] shadow-lg shadow-[#D96C45]/20 whitespace-nowrap text-center"
+            className="btn-primary whitespace-nowrap flex-shrink-0"
           >
             Solicitar Proposta
           </a>

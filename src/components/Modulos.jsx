@@ -81,23 +81,20 @@ const modules = [
 export default function Modulos() {
   return (
     <section id="modulos" className="py-28 bg-[#0f0f0f]">
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
-        <div className="mb-16 text-center">
+      <div className="site-container">
+        <div className="section-header">
           <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase">MVP</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-5">Módulos do Sistema</h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Escopo mínimo para entrar em produção. Tudo que resolve o problema central da WK, sem nada além do necessário.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {modules.map((mod) => (
-            <div
-              key={mod.number}
-              className="group bg-white/[0.03] border border-white/[0.07] rounded-lg p-8 hover:border-[#D96C45]/30 hover:bg-white/[0.05] transition-all duration-300"
-            >
+            <div key={mod.number} className="card group">
               <div className="flex items-center gap-4 mb-5">
-                <div className="w-11 h-11 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] group-hover:bg-[#D96C45]/15 transition-colors flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] group-hover:bg-[#D96C45]/15 transition-colors flex-shrink-0">
                   {mod.icon}
                 </div>
                 <div className="flex items-center gap-3">
@@ -107,7 +104,7 @@ export default function Modulos() {
                   <span className="text-[#D96C45]/40 text-xs font-mono font-semibold">{mod.number}</span>
                 </div>
               </div>
-              <p className="text-gray-400 text-base leading-relaxed">{mod.description}</p>
+              <p className="text-gray-400 text-[15px] leading-[1.75]">{mod.description}</p>
             </div>
           ))}
         </div>

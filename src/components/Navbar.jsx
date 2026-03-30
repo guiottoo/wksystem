@@ -28,18 +28,18 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between h-16">
+      <div className="site-container flex items-center justify-between h-[72px]">
         <a href="#sistema" className="flex-shrink-0">
-          <AllocateLogo className="h-8 w-auto" />
+          <AllocateLogo className="h-7" />
         </a>
 
         {/* Desktop links — centered */}
-        <div className="hidden lg:flex items-center justify-center flex-1 gap-8">
+        <div className="hidden lg:flex items-center justify-center flex-1 gap-10 px-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+              className="text-[15px] text-gray-400 hover:text-white transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -47,7 +47,7 @@ export default function Navbar() {
         </div>
 
         {/* Spacer to balance the logo on desktop */}
-        <div className="hidden lg:block w-[160px]" />
+        <div className="hidden lg:block w-[140px]" />
 
         {/* Mobile hamburger */}
         <button
@@ -67,13 +67,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-[#0f0f0f] border-t border-white/5 px-6 md:px-10 pb-6 pt-2">
+        <div className="lg:hidden bg-[#0f0f0f] border-t border-white/5 px-8 pb-6 pt-2">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block py-3.5 text-base text-gray-400 hover:text-white transition-colors border-b border-white/5 last:border-0"
+              className="block py-4 text-base text-gray-400 hover:text-white transition-colors border-b border-white/5 last:border-0"
             >
               {link.label}
             </a>

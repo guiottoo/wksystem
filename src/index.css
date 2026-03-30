@@ -16,3 +16,75 @@ body {
   color: #e5e5e5;
   min-height: 100vh;
 }
+
+/* ---- Site-wide container ---- */
+.site-container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+@media (max-width: 768px) {
+  .site-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+  display: inline-block;
+  background: #D96C45;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 18px 40px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.btn-primary:hover {
+  background: #c45d38;
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #d1d5db;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 18px 40px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.25);
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+/* ---- Cards ---- */
+.card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 36px;
+  transition: border-color 0.3s, background 0.3s;
+}
+.card:hover {
+  border-color: rgba(217,108,69,0.3);
+  background: rgba(255,255,255,0.04);
+}
+@media (max-width: 640px) {
+  .card {
+    padding: 28px;
+  }
+}
+
+/* ---- Section headers ---- */
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
