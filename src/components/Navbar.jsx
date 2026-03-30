@@ -28,25 +28,30 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-[1280px] mx-auto px-8 flex items-center justify-between h-16">
-        <AllocateLogo className="h-9 w-auto" />
+      <div className="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between h-16">
+        <a href="#sistema" className="flex-shrink-0">
+          <AllocateLogo className="h-8 w-auto" />
+        </a>
 
-        {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-7">
+        {/* Desktop links — centered */}
+        <div className="hidden lg:flex items-center justify-center flex-1 gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-400 hover:text-white transition-colors duration-200 tracking-wide"
+              className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
             >
               {link.label}
             </a>
           ))}
         </div>
 
+        {/* Spacer to balance the logo on desktop */}
+        <div className="hidden lg:block w-[160px]" />
+
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden text-gray-400 hover:text-white p-1"
+          className="lg:hidden text-gray-400 hover:text-white p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
@@ -62,13 +67,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-[#0f0f0f] border-t border-white/5 px-8 pb-6 pt-2">
+        <div className="lg:hidden bg-[#0f0f0f] border-t border-white/5 px-6 md:px-10 pb-6 pt-2">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block py-3 text-sm text-gray-400 hover:text-white transition-colors border-b border-white/5 last:border-0"
+              className="block py-3.5 text-base text-gray-400 hover:text-white transition-colors border-b border-white/5 last:border-0"
             >
               {link.label}
             </a>
