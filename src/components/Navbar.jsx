@@ -4,9 +4,10 @@ import AllocateLogo from './AllocateLogo';
 const navLinks = [
   { label: 'Sistema', href: '#sistema' },
   { label: 'Módulos', href: '#modulos' },
-  { label: 'Stack', href: '#stack' },
   { label: 'Segurança', href: '#seguranca' },
+  { label: 'Stack', href: '#stack' },
   { label: 'Custos', href: '#custos' },
+  { label: 'Investimento', href: '#investimento' },
 ];
 
 export default function Navbar() {
@@ -22,14 +23,16 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-[#0f0f0f]/95 backdrop-blur-md border-b border-white/5 shadow-lg' : 'bg-transparent'
+        scrolled
+          ? 'bg-[#0f0f0f]/95 backdrop-blur-md border-b border-white/5 shadow-lg'
+          : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <div className="max-w-[1280px] mx-auto px-8 flex items-center justify-between h-16">
         <AllocateLogo className="h-9 w-auto" />
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -41,17 +44,9 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <a
-          href="#custos"
-          className="hidden md:block text-sm bg-[#D96C45] hover:bg-[#c45d38] text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium"
-        >
-          Ver Proposta
-        </a>
-
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-gray-400 hover:text-white"
+          className="lg:hidden text-gray-400 hover:text-white p-1"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
@@ -67,7 +62,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#0f0f0f]/98 border-t border-white/5 px-6 pb-4">
+        <div className="lg:hidden bg-[#0f0f0f] border-t border-white/5 px-8 pb-6 pt-2">
           {navLinks.map((link) => (
             <a
               key={link.href}

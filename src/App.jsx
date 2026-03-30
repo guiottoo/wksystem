@@ -1,9 +1,10 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Modulos from './components/Modulos';
-import Stack from './components/Stack';
 import Seguranca from './components/Seguranca';
+import Stack from './components/Stack';
 import Custos from './components/Custos';
+import CustosDev from './components/CustosDev';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -12,9 +13,10 @@ export default function App() {
       <Navbar />
       <Hero />
       <Modulos />
-      <Stack />
       <Seguranca />
+      <Stack />
       <Custos />
+      <CustosDev />
       <Footer />
     </div>
   );
