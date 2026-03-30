@@ -60,30 +60,30 @@ const decisions = [
 
 export default function Stack() {
   return (
-    <section id="stack" className="py-28 bg-[#0f0f0f]">
+    <section id="stack" className="section-spacing">
       <div className="site-container">
         <div className="section-header">
-          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase">Tecnologia</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-5">Stack Técnica</h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase block mb-3">Tecnologia</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Stack Técnica</h2>
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-[1.8]">
             Escolhidas por três critérios: velocidade de desenvolvimento, custo operacional baixo e maturidade para um sistema jurídico.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {layers.map((layer) => (
             <div key={layer.category} className="card">
               <div
-                className="inline-flex items-center text-sm font-semibold px-4 py-2 rounded-lg mb-6"
+                className="inline-flex items-center text-sm font-semibold px-4 py-2 rounded-lg mb-7"
                 style={{ backgroundColor: `${layer.color}15`, color: layer.color, border: `1px solid ${layer.color}25` }}
               >
                 {layer.category}
               </div>
-              <div className="space-y-5">
+              <div className="space-y-6">
                 {layer.items.map((item) => (
                   <div key={item.tech} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-6">
                     <span className="text-white font-medium text-[15px] flex-shrink-0">{item.tech}</span>
-                    <span className="text-gray-500 text-sm sm:text-right leading-relaxed">{item.purpose}</span>
+                    <span className="card-text sm:text-right">{item.purpose}</span>
                   </div>
                 ))}
               </div>
@@ -93,12 +93,12 @@ export default function Stack() {
 
         {/* Architectural decisions */}
         <div>
-          <h3 className="text-xl font-semibold text-white mb-6 text-center">Decisões de Arquitetura</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <h3 className="text-xl font-semibold text-white mb-8 text-center">Decisões de Arquitetura</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {decisions.map((d) => (
-              <div key={d.title} className="bg-[#D96C45]/5 border border-[#D96C45]/15 rounded-lg p-8">
-                <h4 className="text-[#D96C45] font-semibold text-base mb-3">{d.title}</h4>
-                <p className="text-gray-400 text-[15px] leading-[1.75]">{d.description}</p>
+              <div key={d.title} className="bg-[#D96C45]/5 border border-[#D96C45]/15 rounded-lg p-10">
+                <h4 className="text-[#D96C45] font-semibold text-base mb-4">{d.title}</h4>
+                <p className="card-text">{d.description}</p>
               </div>
             ))}
           </div>

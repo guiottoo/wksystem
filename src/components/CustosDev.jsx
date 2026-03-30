@@ -69,18 +69,18 @@ const maintenanceItems = [
 
 export default function CustosDev() {
   return (
-    <section id="investimento" className="py-28 bg-[#0f0f0f]">
+    <section id="investimento" className="section-spacing">
       <div className="site-container">
         <div className="section-header">
-          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase">Investimento</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-5">Desenvolvimento e Manutenção</h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase block mb-3">Investimento</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Desenvolvimento e Manutenção</h2>
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-[1.8]">
             O desenvolvimento é dividido em fases para garantir entregas progressivas e valor imediato. A manutenção mantém o sistema seguro e evoluindo.
           </p>
         </div>
 
         {/* Dev phases */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {devPhases.map((p, i) => (
             <div
               key={p.phase}
@@ -90,7 +90,7 @@ export default function CustosDev() {
                   : 'bg-white/[0.025] border-white/[0.06]'
               }`}
             >
-              <div className="mb-5">
+              <div className="mb-6">
                 <span
                   className="text-sm font-semibold px-4 py-2 rounded-lg inline-block"
                   style={
@@ -102,11 +102,11 @@ export default function CustosDev() {
                   {p.phase}
                 </span>
               </div>
-              <h3 className="text-white font-bold text-xl mb-3">{p.title}</h3>
-              <p className="text-gray-400 text-[15px] mb-6 leading-[1.75]">{p.description}</p>
-              <ul className="space-y-3">
+              <h3 className="text-white font-bold text-xl mb-4">{p.title}</h3>
+              <p className="card-text mb-7">{p.description}</p>
+              <ul className="space-y-4">
                 {p.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-[15px] text-gray-400 leading-[1.75]">
+                  <li key={item} className="flex items-start gap-3 card-text">
                     <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#D96C45]/60 mt-2.5" />
                     {item}
                   </li>
@@ -117,35 +117,19 @@ export default function CustosDev() {
         </div>
 
         {/* Maintenance */}
-        <div className="mb-10">
-          <h3 className="text-xl font-semibold text-white mb-6 text-center">O que está incluso na manutenção</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-8 text-center">O que está incluso na manutenção</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {maintenanceItems.map((item) => (
               <div key={item.title} className="card">
-                <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] mb-5">
+                <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] mb-6">
                   {item.icon}
                 </div>
                 <h4 className="text-white font-semibold text-lg mb-3 leading-snug">{item.title}</h4>
-                <p className="text-gray-400 text-[15px] leading-[1.75]">{item.description}</p>
+                <p className="card-text">{item.description}</p>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Contact CTA */}
-        <div className="bg-gradient-to-br from-[#D96C45]/8 to-transparent border border-[#D96C45]/20 rounded-lg p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div>
-            <h3 className="text-white font-bold text-xl mb-2">Pronto para começar?</h3>
-            <p className="text-gray-400 text-[15px] leading-[1.75] max-w-lg">
-              Entre em contato com a Allocate para receber a proposta comercial completa com valores de desenvolvimento e plano de manutenção.
-            </p>
-          </div>
-          <a
-            href="mailto:contato@allocate.com.br"
-            className="btn-primary whitespace-nowrap flex-shrink-0"
-          >
-            Solicitar Proposta
-          </a>
         </div>
       </div>
     </section>

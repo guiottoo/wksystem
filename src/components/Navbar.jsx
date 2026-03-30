@@ -28,13 +28,13 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="site-container flex items-center justify-between h-[72px]">
+      <div className="site-container flex items-center h-[72px]">
         <a href="#sistema" className="flex-shrink-0">
           <AllocateLogo className="h-7" />
         </a>
 
-        {/* Desktop links — centered */}
-        <div className="hidden lg:flex items-center justify-center flex-1 gap-10 px-8">
+        {/* Desktop links — centered in remaining space */}
+        <nav className="hidden lg:flex items-center justify-center flex-1 gap-10">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -44,14 +44,11 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-        </div>
-
-        {/* Spacer to balance the logo on desktop */}
-        <div className="hidden lg:block w-[140px]" />
+        </nav>
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden text-gray-400 hover:text-white p-2"
+          className="lg:hidden text-gray-400 hover:text-white p-2 ml-auto"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
@@ -67,7 +64,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-[#0f0f0f] border-t border-white/5 px-8 pb-6 pt-2">
+        <div className="lg:hidden bg-[#0f0f0f] border-t border-white/5 site-container pb-6 pt-2">
           {navLinks.map((link) => (
             <a
               key={link.href}

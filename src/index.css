@@ -15,6 +15,15 @@ body {
   background-color: #0f0f0f;
   color: #e5e5e5;
   min-height: 100vh;
+  line-height: 1.7;
+}
+
+/* ---- Global grid background ---- */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 /* ---- Site-wide container ---- */
@@ -39,7 +48,7 @@ body {
   color: #fff;
   font-weight: 600;
   font-size: 16px;
-  padding: 18px 40px;
+  padding: 18px 48px;
   border-radius: 8px;
   transition: all 0.2s;
 }
@@ -48,29 +57,12 @@ body {
   transform: scale(1.02);
 }
 
-.btn-secondary {
-  display: inline-block;
-  border: 1px solid rgba(255,255,255,0.12);
-  color: #d1d5db;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 18px 40px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.04);
-  transition: all 0.2s;
-}
-.btn-secondary:hover {
-  border-color: rgba(255,255,255,0.25);
-  color: #fff;
-  background: rgba(255,255,255,0.08);
-}
-
 /* ---- Cards ---- */
 .card {
   background: rgba(255,255,255,0.025);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 8px;
-  padding: 36px;
+  padding: 40px;
   transition: border-color 0.3s, background 0.3s;
 }
 .card:hover {
@@ -83,8 +75,28 @@ body {
   }
 }
 
+/* ---- Card inner text — monospace/robotic ---- */
+.card-text {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+  font-size: 14px;
+  line-height: 1.85;
+  color: #9ca3af;
+}
+
 /* ---- Section headers ---- */
 .section-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 64px;
+}
+
+/* ---- Section spacing ---- */
+.section-spacing {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+@media (max-width: 768px) {
+  .section-spacing {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 }

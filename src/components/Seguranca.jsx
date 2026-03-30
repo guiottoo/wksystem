@@ -79,40 +79,39 @@ const languages = [
 
 export default function Seguranca() {
   return (
-    <section id="seguranca" className="py-28 bg-[#111111]">
+    <section id="seguranca" className="section-spacing">
       <div className="site-container">
         <div className="section-header">
-          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase">Cuidados Críticos</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-5">Segurança e Conformidade</h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase block mb-3">Cuidados Críticos</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Segurança e Conformidade</h2>
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-[1.8]">
             O sistema armazena passaportes, certidões e dados pessoais de estrangeiros. Uma falha tem consequências jurídicas e reputacionais graves.
           </p>
         </div>
 
-        {/* Security grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {securityItems.map((item) => (
             <div key={item.title} className="card">
-              <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] mb-5">
+              <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] mb-6">
                 {item.icon}
               </div>
               <h3 className="text-white font-semibold text-lg mb-3 leading-snug">{item.title}</h3>
-              <p className="text-gray-400 text-[15px] leading-[1.75]">{item.description}</p>
+              <p className="card-text">{item.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
           {/* LGPD */}
           <div className="lg:col-span-2 card">
-            <h3 className="text-white font-bold text-xl mb-3">LGPD</h3>
-            <p className="text-gray-400 text-[15px] mb-6 leading-[1.75]">
+            <h3 className="text-white font-bold text-xl mb-4">LGPD</h3>
+            <p className="card-text mb-6">
               A Lei Geral de Proteção de Dados se aplica integralmente ao WK System. Descumprir pode gerar multas de até{' '}
               <span className="text-[#D96C45] font-semibold">2% do faturamento ou R$ 50 milhões</span>.
             </p>
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               {lgpdItems.map((item) => (
-                <li key={item} className="flex items-start gap-4 text-[15px] text-gray-400 leading-[1.75]">
+                <li key={item} className="flex items-start gap-4 card-text">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#D96C45]/15 border border-[#D96C45]/30 flex items-center justify-center mt-0.5">
                     <svg className="w-3 h-3 text-[#D96C45]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -126,13 +125,13 @@ export default function Seguranca() {
 
           {/* Reliability */}
           <div className="card">
-            <h3 className="text-white font-bold text-xl mb-6">Confiabilidade</h3>
-            <div className="space-y-6">
+            <h3 className="text-white font-bold text-xl mb-8">Confiabilidade</h3>
+            <div className="space-y-7">
               {reliabilityItems.map((item) => (
-                <div key={item.label} className="border-b border-white/5 pb-6 last:border-0 last:pb-0">
-                  <div className="text-gray-500 text-sm mb-1">{item.label}</div>
+                <div key={item.label} className="border-b border-white/5 pb-7 last:border-0 last:pb-0">
+                  <div className="text-gray-500 text-sm mb-2">{item.label}</div>
                   <div className="text-[#D96C45] font-bold text-2xl leading-tight">{item.value}</div>
-                  <div className="text-gray-600 text-sm mt-1">{item.sub}</div>
+                  <div className="text-gray-600 text-sm mt-2">{item.sub}</div>
                 </div>
               ))}
             </div>
@@ -141,11 +140,11 @@ export default function Seguranca() {
 
         {/* Languages */}
         <div className="card">
-          <h3 className="text-white font-bold text-xl mb-3">Suporte Multilíngue</h3>
-          <p className="text-gray-400 text-[15px] mb-6 leading-[1.75]">
+          <h3 className="text-white font-bold text-xl mb-3 text-center">Suporte Multilíngue</h3>
+          <p className="card-text mb-8 text-center max-w-2xl mx-auto">
             O público da WK é estrangeiro. O sistema funciona nos quatro idiomas desde o início, planejado na arquitetura.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {languages.map((l) => (
               <div key={l.lang} className="flex items-center gap-4 bg-white/[0.03] border border-white/[0.05] rounded-lg p-6">
                 <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] flex-shrink-0">
@@ -155,7 +154,7 @@ export default function Seguranca() {
                 </div>
                 <div>
                   <div className="text-white font-semibold text-base">{l.lang}</div>
-                  <div className="text-gray-500 text-sm leading-snug mt-1">{l.desc}</div>
+                  <div className="text-gray-500 text-sm leading-relaxed mt-1">{l.desc}</div>
                 </div>
               </div>
             ))}
