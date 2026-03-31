@@ -28,7 +28,7 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="site-container flex items-center h-[72px]">
+      <div className="site-container flex items-center justify-between h-[72px] mt-4">
         <a href="#sistema" className="flex-shrink-0">
           <AllocateLogo className="h-7" />
         </a>
@@ -48,7 +48,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden text-gray-400 hover:text-white p-2 ml-auto"
+          className="lg:hidden text-gray-400 hover:text-white p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >

@@ -5,31 +5,20 @@ export default function Hero() {
       className="h-[70vh] min-h-[500px] flex items-center justify-center relative overflow-hidden"
     >
       {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#D96C45]/6 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-[#D96C45]/3 rounded-full blur-[120px] sm:blur-[180px] pointer-events-none" />
 
       <div className="relative z-10 site-container flex flex-col items-center text-center">
-        <div className="inline-flex items-center bg-[#D96C45]/10 border border-[#D96C45]/20 text-[#D96C45] text-xs font-medium px-8 py-4 rounded-lg mb-10 tracking-widest uppercase">
-          Explicação do projeto
-        </div>
-
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#D96C45] mb-6 leading-[1.1] tracking-tight">
           WK System
         </h1>
 
-        <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 mb-6 leading-[1.5] max-w-2xl font-medium">
+        <p className="text-xl sm:text-2xl text-gray-200 mb-5 leading-[1.5] max-w-2xl font-medium">
           A plataforma que coloca a WK em outro nível.
         </p>
 
-        <p className="text-base sm:text-lg text-gray-500 mb-14 max-w-xl leading-[1.8]">
+        <p className="max-w-xl" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', 'SF Mono', monospace", fontSize: '14px', lineHeight: '1.85', color: '#9ca3af' }}>
           Um sistema de gestão migratória completo: casos, documentos, comunicação e acompanhamento em uma única plataforma segura, multilíngue e profissional.
         </p>
-
-        <a
-          href="#modulos"
-          className="btn-primary text-center"
-        >
-          Explorar Projeto
-        </a>
       </div>
 
       {/* Scroll indicator */}

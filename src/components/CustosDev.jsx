@@ -49,7 +49,7 @@ const maintenanceItems = [
   },
   {
     title: 'Novas funcionalidades',
-    description: 'Desenvolvimento contínuo de melhorias e recursos solicitados pela equipe da WK.',
+    description: 'Sob orçamento separado. Cada nova funcionalidade solicitada pela WK é avaliada e precificada individualmente antes do desenvolvimento.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -72,19 +72,20 @@ export default function CustosDev() {
     <section id="investimento" className="section-spacing">
       <div className="site-container">
         <div className="section-header">
-          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase block mb-3">Investimento</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Desenvolvimento e Manutenção</h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-[1.8]">
+          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase inline-block">Investimento</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Desenvolvimento e Manutenção</h2>
+          <p>
             O desenvolvimento é dividido em fases para garantir entregas progressivas e valor imediato. A manutenção mantém o sistema seguro e evoluindo.
           </p>
         </div>
 
+        <div className="space-y-12">
         {/* Dev phases */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {devPhases.map((p, i) => (
             <div
               key={p.phase}
-              className={`rounded-lg p-10 border ${
+              className={`rounded-lg p-6 sm:p-10 border ${
                 i === 0
                   ? 'bg-[#D96C45]/5 border-[#D96C45]/20'
                   : 'bg-white/[0.025] border-white/[0.06]'
@@ -119,7 +120,7 @@ export default function CustosDev() {
         {/* Maintenance */}
         <div>
           <h3 className="text-xl font-semibold text-white mb-8 text-center">O que está incluso na manutenção</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {maintenanceItems.map((item) => (
               <div key={item.title} className="card">
                 <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] mb-6">
@@ -131,6 +132,7 @@ export default function CustosDev() {
             ))}
           </div>
         </div>
+        </div>{/* end space-y-12 */}
       </div>
     </section>
   );

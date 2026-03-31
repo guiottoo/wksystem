@@ -63,14 +63,14 @@ export default function Stack() {
     <section id="stack" className="section-spacing">
       <div className="site-container">
         <div className="section-header">
-          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase block mb-3">Tecnologia</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Stack Técnica</h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-[1.8]">
+          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase inline-block">Tecnologia</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Stack Técnica</h2>
+          <p>
             Escolhidas por três critérios: velocidade de desenvolvimento, custo operacional baixo e maturidade para um sistema jurídico.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           {layers.map((layer) => (
             <div key={layer.category} className="card">
               <div
@@ -91,18 +91,6 @@ export default function Stack() {
           ))}
         </div>
 
-        {/* Architectural decisions */}
-        <div>
-          <h3 className="text-xl font-semibold text-white mb-8 text-center">Decisões de Arquitetura</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {decisions.map((d) => (
-              <div key={d.title} className="bg-[#D96C45]/5 border border-[#D96C45]/15 rounded-lg p-10">
-                <h4 className="text-[#D96C45] font-semibold text-base mb-4">{d.title}</h4>
-                <p className="card-text">{d.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

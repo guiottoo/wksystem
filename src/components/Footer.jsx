@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/5 text-center md:text-left">
-          <p className="text-gray-700 text-sm">2025 Allocate. Todos os direitos reservados.</p>
+          <p className="text-gray-700 text-sm">2026 Allocate. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

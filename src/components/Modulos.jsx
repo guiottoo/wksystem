@@ -1,112 +1,130 @@
-const modules = [
+const services = [
+  'Naturalização Brasileira',
+  'Conversão/Emissão de CNH e CPF',
+  'Visto de Investidor Imobiliário',
+  'Visto de Estudante',
+  'Visto Nômade Digital',
+  'Visto de Aposentadoria',
+  'Visto de Turista',
+  'Autorização de Residência por Reunião Familiar',
+  'Autorização de Residência por Acordos e Tratados',
+];
+
+const clientModules = [
   {
-    number: '01',
-    title: 'Acesso e Segurança',
-    description:
-      'Login seguro com autenticação em dois fatores (MFA). Cada usuário enxerga apenas o que lhe pertence. Três perfis de acesso: Cliente, Advogado e Admin.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-      </svg>
-    ),
+    title: 'Acesso com MFA',
+    description: 'Login seguro com autenticação em dois fatores. O cliente acessa apenas os próprios documentos e o status do seu caso.',
   },
   {
-    number: '02',
-    title: 'Gestão de Casos',
-    description:
-      'A equipe cria e gerencia cada processo migratório. Define etapas, atribui o advogado responsável e atualiza o status do caso em tempo real.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-      </svg>
-    ),
-  },
-  {
-    number: '03',
     title: 'Envio de Documentos',
-    description:
-      'O cliente recebe uma lista do que precisa enviar e faz o upload direto na plataforma. A equipe aprova, rejeita ou solicita nova versão. Tudo registrado.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-      </svg>
-    ),
+    description: 'Checklist claro do que precisa ser enviado. Upload direto na plataforma, com rastreamento de status de cada documento.',
   },
   {
-    number: '04',
     title: 'Acompanhamento do Processo',
-    description:
-      'O cliente visualiza uma timeline clara com o status atual do processo. Sem precisar ligar ou mandar mensagem para saber o que está acontecendo.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
+    description: 'Timeline com o status atual do processo, atualizada em tempo real. Sem precisar ligar ou mandar mensagem.',
   },
   {
-    number: '05',
-    title: 'Notificações Automáticas',
-    description:
-      'Toda atualização relevante dispara um email automático para o cliente. Menos mensagens no WhatsApp, mais profissionalismo no atendimento.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-      </svg>
-    ),
-  },
-  {
-    number: '06',
-    title: 'Análise de Elegibilidade',
-    description:
-      'Leads e clientes respondem um formulário e descobrem imediatamente se atendem os requisitos para o visto ou naturalização. Resultado sem precisar falar com advogado.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
-    number: '07',
-    title: 'Dashboard da Equipe',
-    description:
-      'Visão geral de todos os casos ativos, documentos pendentes e leads qualificados. Dados concretos para tomar decisões com mais segurança.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-      </svg>
-    ),
+    title: 'Notificações por Email',
+    description: 'Toda atualização relevante dispara um email automático. Menos dependência de WhatsApp, mais profissionalismo no atendimento.',
   },
 ];
+
+const teamModules = [
+  {
+    title: 'Gestão de Casos',
+    description: 'Criação e gerenciamento de cada processo migratório. Definição de etapas, atribuição do advogado responsável e controle de status.',
+  },
+  {
+    title: 'Aprovação de Documentos',
+    description: 'A equipe aprova, rejeita ou solicita nova versão de cada documento enviado pelo cliente. Tudo com histórico registrado.',
+  },
+  {
+    title: 'Dashboard Operacional',
+    description: 'Visão consolidada de todos os casos ativos, documentos pendentes e leads qualificados. Dados para decisões com mais segurança.',
+  },
+];
+
+function CheckIcon() {
+  return (
+    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#D96C45]/15 border border-[#D96C45]/30 flex items-center justify-center">
+      <svg className="w-3 h-3 text-[#D96C45]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+      </svg>
+    </span>
+  );
+}
 
 export default function Modulos() {
   return (
     <section id="modulos" className="section-spacing">
       <div className="site-container">
         <div className="section-header">
-          <span className="text-[#D96C45] text-xs font-semibold tracking-widest uppercase block mb-3">MVP</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Módulos do Sistema</h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-[1.8]">
-            Escopo mínimo para entrar em produção. Tudo que resolve o problema central da WK, sem nada além do necessário.
-          </p>
+          <span className="inline-block text-[#D96C45] text-xs font-semibold tracking-widest uppercase px-2 py-2 border border-[#D96C45]/30 rounded-md bg-[#D96C45]/5">MVP</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Módulos do Sistema</h2>
+          <p>Escopo mínimo para entrar em produção.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {modules.map((mod) => (
-            <div key={mod.number} className="card group">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-[#D96C45]/10 border border-[#D96C45]/20 flex items-center justify-center text-[#D96C45] group-hover:bg-[#D96C45]/15 transition-colors flex-shrink-0">
-                  {mod.icon}
-                </div>
-                <div className="flex items-center gap-3">
-                  <h3 className="text-white font-semibold text-lg group-hover:text-[#D96C45] transition-colors leading-snug">
-                    {mod.title}
-                  </h3>
-                  <span className="text-[#D96C45]/40 text-xs font-mono font-semibold">{mod.number}</span>
-                </div>
-              </div>
-              <p className="card-text">{mod.description}</p>
+        <div className="flex flex-col gap-12">
+
+          {/* Leads */}
+          <div className="card !p-0 overflow-hidden">
+            <div className="px-6 sm:px-10 py-5 bg-[#D96C45] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+              <h3 className="text-white font-bold text-base tracking-wide">Para leads</h3>
+              <span className="text-white/70 text-sm font-mono">Quem ainda não é cliente da WK</span>
             </div>
-          ))}
+            <div className="px-5 sm:px-10 py-8">
+              <p className="card-text mb-8">
+                O lead acessa a plataforma, escolhe o serviço de interesse e preenche um formulário de elegibilidade. A WK avalia manualmente e retorna com a resposta. Se aprovado, o lead é convertido em cliente e o processo tem início.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3">
+                {services.map((s) => (
+                  <div key={s} className="flex items-center gap-3">
+                    <CheckIcon />
+                    <span className="card-text">{s}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Para o cliente */}
+          <div className="card !p-0 overflow-hidden">
+            <div className="px-6 sm:px-10 py-5 bg-[#D96C45] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+              <h3 className="text-white font-bold text-base tracking-wide">Para o cliente</h3>
+              <span className="text-white/70 text-sm font-mono">O que o cliente vê e faz na plataforma</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/[0.05]">
+              {clientModules.map((mod) => (
+                <div key={mod.title} className="px-5 sm:px-8 py-6 sm:py-8">
+                  <div className="flex items-center gap-3 mb-3">
+                    <CheckIcon />
+                    <span className="text-white font-semibold text-[15px]">{mod.title}</span>
+                  </div>
+                  <p className="card-text">{mod.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Para a equipe */}
+          <div className="card !p-0 overflow-hidden">
+            <div className="px-6 sm:px-10 py-5 bg-[#D96C45] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+              <h3 className="text-white font-bold text-base tracking-wide">Para a equipe</h3>
+              <span className="text-white/70 text-sm font-mono">O que a WK gerencia internamente</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/[0.05]">
+              {teamModules.map((mod) => (
+                <div key={mod.title} className="px-5 sm:px-8 py-6 sm:py-8">
+                  <div className="flex items-center gap-3 mb-3">
+                    <CheckIcon />
+                    <span className="text-white font-semibold text-[15px]">{mod.title}</span>
+                  </div>
+                  <p className="card-text">{mod.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

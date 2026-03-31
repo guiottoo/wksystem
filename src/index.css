@@ -36,24 +36,26 @@ body {
 }
 @media (max-width: 768px) {
   .site-container {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
 /* ---- Buttons ---- */
 .btn-primary {
   display: inline-block;
-  background: #D96C45;
-  color: #fff;
+  background: transparent;
+  color: #D96C45;
   font-weight: 600;
   font-size: 16px;
-  padding: 18px 48px;
+  padding: 14px 36px;
   border-radius: 8px;
+  border: 3px solid #D96C45;
   transition: all 0.2s;
 }
 .btn-primary:hover {
-  background: #c45d38;
+  background: #D96C45;
+  color: #fff;
   transform: scale(1.02);
 }
 
@@ -71,8 +73,20 @@ body {
 }
 @media (max-width: 640px) {
   .card {
-    padding: 28px;
+    padding: 20px;
   }
+}
+
+/* Card titles — small top margin to separate from icon */
+.card h3,
+.card h4 {
+  margin-top: 10px;
+}
+
+/* Card body text — extra top margin to breathe below title */
+.card p.card-text,
+.card ul {
+  margin-top: 12px;
 }
 
 /* ---- Card inner text — monospace/robotic ---- */
@@ -83,20 +97,40 @@ body {
   color: #9ca3af;
 }
 
-/* ---- Section headers ---- */
+/* ---- Section headers — left-aligned ---- */
 .section-header {
-  text-align: center;
-  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 48px;
+}
+
+.section-header span {
+  /* label stays at natural left position */
+}
+
+.section-header h2 {
+  margin-top: 10px;
+}
+
+.section-header p {
+  margin-top: 10px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+  font-size: 14px;
+  line-height: 1.85;
+  color: #9ca3af;
+  max-width: 680px;
 }
 
 /* ---- Section spacing ---- */
 .section-spacing {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 @media (max-width: 768px) {
   .section-spacing {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 }
